@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  web:
+    container_name: react-webpack-dev
+    image: node:18-alpine
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+    environment:
+      NODE_ENV: development
+    working_dir: /app
+    command: [ "npm", "run", "serve" ]
